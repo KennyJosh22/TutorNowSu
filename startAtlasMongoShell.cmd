@@ -1,0 +1,1 @@
+mongo mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/test?retryWrites=true&w=majority
