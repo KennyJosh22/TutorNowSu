@@ -2,10 +2,10 @@
   "name": "tutor-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./server.js",
+  "main": "server.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node ./src/server.ts",
+    "dev": "ts-node ./server.ts",
     "start": "nodemon ./dist/server.js",
     "prod": "npm run build && npm run start",
     "testTutor": "mocha ./src/test/testTutorRoutes.js",
