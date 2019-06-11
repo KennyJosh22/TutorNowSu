@@ -1,4 +1,6 @@
-import express,{Request, Response} from "express";
+// import express,{Request, Response} from "express";
+import * as express from 'express';
+import {Request, Response} from "express";
 import {StudentController} from "../controllers/studentController";
 import {TutorController} from "../controllers/tutorController";
 export class Routes {

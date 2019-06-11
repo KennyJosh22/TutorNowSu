@@ -1,5 +1,8 @@
-import express, { Router } from "express";
-import bodyParser from "body-parser";
+// import express, { Router } from "express";
+// import * as express from 'express';
+import express = require('express');
+// import bodyParser from "body-parser";
+import * as bodyParser from "body-parser";
 import { Routes } from "./routes/crmRoutes";
 
 import  mongoose from "mongoose";

@@ -1,4 +1,4 @@
-import * as mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import {TutorSchema} from '../model/Tutor';
 import {Request, Response} from 'express';
 
