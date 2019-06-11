@@ -38,7 +38,7 @@ class App{
     private routes(): void {
         let router = express.Router();
         this.app.use('/', router);
-        this.app.use('/', express.static(__dirname+'../frontend/dist'));
+        this.app.use('/', express.static(__dirname+'/angularDist'));
     }
 }
 
