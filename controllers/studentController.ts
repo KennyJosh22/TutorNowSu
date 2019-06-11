@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import Mongoose = require("mongoose");
 import {StudentSchema} from '../model/Student';
 import {Request, Response} from 'express';
 
-const Student = mongoose.model('Student', StudentSchema);
+const Student = Mongoose.model('Student', StudentSchema);
 export class StudentController {    
     public addNewStudent (req:Request, res:Response){
         console.log(req.body);

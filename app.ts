@@ -5,8 +5,9 @@ import express = require('express');
 import * as bodyParser from "body-parser";
 import { Routes } from "./routes/crmRoutes";
 
-import  mongoose from "mongoose";
-import cors from "cors";
+import Mongoose = require("mongoose");
+import cors = require("cors");
+// import cors from "cors";
 class App{
     public app: express.Application = express();
     public routePrv: Routes = new Routes();
@@ -29,7 +30,7 @@ class App{
     }
     private openDBConnection():void{
     
-        mongoose.connect(this.mongoUrl, {useNewUrlParser: true})
+        Mongoose.connect(this.mongoUrl, {useNewUrlParser: true})
             .then( () => {
                 console.log('Connected to MongoDB..')
 

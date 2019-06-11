@@ -1,36 +1,33 @@
+"use strict";
 // import mongoose from "mongoose";
-
-import Mongoose = require("mongoose");
-
-const Schema= Mongoose.Schema;
-
-export const TutorSchema = new Schema ({
+exports.__esModule = true;
+var Mongoose = require("mongoose");
+var Schema = Mongoose.Schema;
+exports.TutorSchema = new Schema({
     firstName: {
         type: String,
         required: "Enter a first name"
     },
-    lastName:{
+    lastName: {
         type: String,
         required: 'Enter a last name'
-    }, 
+    },
     email: String,
-    bio: String, 
+    bio: String,
     suId: {
         type: Number,
         required: "Student must have an suId"
     },
-    available:{
+    available: {
         type: Boolean,
         required: "Tutor must have field"
     },
-    workingHours:{
+    workingHours: {
         type: Number,
         required: "Tutor must have workingHours"
-
     },
-    isSelected:{
+    isSelected: {
         type: Boolean,
         required: "Tutor must have isSelected field"
- 
     }
-}, {collection:'tutors'});
+}, { collection: 'tutors' });

@@ -2,14 +2,14 @@
   "name": "tutor-backend",
   "version": "1.0.0",
   "description": "",
-  "main": ".dist/server.js",
+  "main": "server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc ./server.ts",
     "dev": "ts-node ./server.ts",
-    "start": "nodemon ./dist/server.js",
+    "start": "nodemon server.js",
     "prod": "npm run build && npm run start",
-    "testTutor": "mocha ./src/test/testTutorRoutes.js",
-    "testStudent": "mocha ./src/test/testStudentRoutes.js"
+    "testTutor": "mocha ./test/testTutorRoutes.js",
+    "testStudent": "mocha ./test/testStudentRoutes.js"
   },
   "keywords": [],
   "author": "",
