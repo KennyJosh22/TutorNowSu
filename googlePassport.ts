@@ -19,7 +19,8 @@ class GooglePassport {
         passport.use( new GoogleStrategy({
                 clientID: this.clientId,
                 clientSecret: this.secretId,
-                callbackURL: "http://localhost:3000/auth/google/callback",
+                // callbackURL: "http://localhost:3000/auth/google/callback",
+                callbackURL: "https://tutornowsu.azurewebsites.net/auth/google/callback",
                 profileFields: ['id', 'displayName', 'emails']
             },
             (accessToken, refreshToken, profile, done) => {
