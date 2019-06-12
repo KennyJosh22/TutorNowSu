@@ -3,20 +3,40 @@ import * as express from 'express';
 import {Request, Response} from "express";
 import {StudentController} from "../controllers/studentController";
 import {TutorController} from "../controllers/tutorController";
+import {userController} from "../controllers/userController"
+import GooglePassport from "../googlePassport";
+
+
 export class Routes {
     public Student: StudentController;
     public Tutor: TutorController;
+    public googlePassportObj:GooglePassport;
     
 
     constructor(){
+        this.googlePassportObj = new GooglePassport();
         this.Student = new StudentController();
         this.Tutor = new TutorController();
     }
-    public routes(app:express.Application) :void{
+    public routes(app:express.Application) :void {
     //    app.route("/").get ((req:Request, res:Response) =>{
     //        console.log ('get /');
     //        res.status(200). send("Connected/ HomePage!");
     //    })
+
+// Log in SSO
+    //     app.get("/auth/google", passport.authenticate("google",{
+    //         scope:['https://www.googleapis.com/auth/plus.login', 'email']
+    //     }));
+
+    //     app.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: '/auth/google', session: false }),
+    //     (req:any, res) => {
+    //             console.log('wooo we authenticated, here is our user id:',req.user.id);
+    //             res.redirect(`http://localhost:3000/redirect/${req.user.id}`)
+    //         }
+    //     )
+
+    //    app.route("/redirect/:googleID").get(this.User.redirectUser);
 
        app.route("/api/student/addNewStudent").post(this.Student.addNewStudent);
        app.route("/api/students/").get(this.Student.getAllStudents);

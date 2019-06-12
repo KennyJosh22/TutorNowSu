@@ -14,7 +14,7 @@ var App = /** @class */ (function () {
         this.app = express();
         this.routePrv = new crmRoutes_1.Routes();
         // public mongoUrl: string = 'mongodb://localhost/su_tutor';
-        this.mongoUrl = 'mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/tutorNow?retryWrites=true&w=majority';
+        this.mongoUrl = 'mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/su_tutor?retryWrites=true&w=majority';
         this.config();
         this.openDBConnection();
         this.routePrv.routes(this.app);
