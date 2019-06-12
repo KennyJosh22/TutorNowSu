@@ -16,18 +16,24 @@ export class userController {
                 console.log("err")
             }
             else{
-                if (user.isTutor){
-                    console.log("redirect to the google page")
-                    // res.redirect(`http://localhost:3000/#/tutor/${req.params.googleID}`)
-                    
-                    res.redirect(`https://tutornowsu.azurewebsites.net/#/tutor/${req.params.googleID}`)
-                    
+                if (user){
+                    if (user.isTutor){
+                        console.log("redirect to the google page")
+                        // res.redirect(`http://localhost:3000/#/tutor/${req.params.googleID}`)
+                        
+                        res.redirect(`https://tutornowsu.azurewebsites.net/#/tutor/${req.params.googleID}`)
+                        
+                    }
+                    else{
+                        console.log("redirect to the student page")
+                        // res.redirect(`http://localhost:3000/#/student/${req.params.googleID}`)
+                        res.redirect(`https://tutornowsu.azurewebsites.net/#/student/${req.params.googleID}`)
+                
+                    }
                 }
                 else{
-                    console.log("redirect to the student page")
-                    // res.redirect(`http://localhost:3000/#/student/${req.params.googleID}`)
-                    res.redirect(`https://tutornowsu.azurewebsites.net/#/student/${req.params.googleID}`)
-             
+                    console.log("can't find the account")
+                    res.redirect(`https://tutornowsu.azurewebsites.net/#/PageNotFound`)
                 }
             }
         })

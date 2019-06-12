@@ -35,7 +35,7 @@ export class Routes {
         app.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: '/auth/google', session: false }),
         (req:any, res) => {
                 console.log('wooo we authenticated, here is our user id:',req.user.id);
-                res.redirect(`http://localhost:3000/redirect/${req.user.id}`)
+                res.redirect(`http://tutornowsu.azurewebsites.net/redirect/${req.user.id}`)
             }
         )
 
