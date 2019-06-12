@@ -18,7 +18,6 @@ var App = /** @class */ (function () {
         this.config();
         this.openDBConnection();
         this.routePrv.routes(this.app);
-        this.routes();
     }
     App.prototype.config = function () {
         // support application/json type post data
@@ -32,11 +31,6 @@ var App = /** @class */ (function () {
             .then(function () {
             console.log('Connected to MongoDB..');
         })["catch"](function (err) { return console.error(err); });
-    };
-    App.prototype.routes = function () {
-        var router = express.Router();
-        this.app.use('/', router);
-        this.app.use('/', express.static(__dirname + '/angularDist'));
     };
     return App;
 }());

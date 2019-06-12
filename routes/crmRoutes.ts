@@ -13,10 +13,10 @@ export class Routes {
         this.Tutor = new TutorController();
     }
     public routes(app:express.Application) :void{
-       app.route("/").get ((req:Request, res:Response) =>{
-           console.log ('get /');
-           res.status(200). send("Connected/ HomePage!");
-       })
+    //    app.route("/").get ((req:Request, res:Response) =>{
+    //        console.log ('get /');
+    //        res.status(200). send("Connected/ HomePage!");
+    //    })
 
        app.route("/api/student/addNewStudent").post(this.Student.addNewStudent);
        app.route("/api/students/").get(this.Student.getAllStudents);
@@ -32,10 +32,6 @@ export class Routes {
        app.route("/api/tutor/setUnAvailable/:tutorID").put(this.Tutor.setUnAvailable);
        app.route("/api/tutor/setSelected/:tutorID").put(this.Tutor.setSelected);
        app.route("/api/tutor/unSelected/:tutorID").put(this.Tutor.resetSelect);
-
-
-
-    
+    //    app.use('/', express.static(__dirname+'/angularDist'));
     }
-
 }

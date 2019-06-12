@@ -19,7 +19,6 @@ class App{
         this.config();
         this.openDBConnection();
         this.routePrv.routes(this.app);
-        this.routes();
     }
     private config():void{
         // support application/json type post data
@@ -39,11 +38,7 @@ class App{
             .catch( err => console.error(err)) ;
     }
 
-    private routes(): void {
-        let router = express.Router();
-        this.app.use('/', router);
-        this.app.use('/', express.static(__dirname+'/angularDist'));
-    }
+
 }
 
 export default new App().app;

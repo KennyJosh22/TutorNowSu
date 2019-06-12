@@ -8,10 +8,10 @@ var Routes = /** @class */ (function () {
         this.Tutor = new tutorController_1.TutorController();
     }
     Routes.prototype.routes = function (app) {
-        app.route("/").get(function (req, res) {
-            console.log('get /');
-            res.status(200).send("Connected/ HomePage!");
-        });
+        //    app.route("/").get ((req:Request, res:Response) =>{
+        //        console.log ('get /');
+        //        res.status(200). send("Connected/ HomePage!");
+        //    })
         app.route("/api/student/addNewStudent").post(this.Student.addNewStudent);
         app.route("/api/students/").get(this.Student.getAllStudents);
         app.route("/api/student/:studentID").get(this.Student.getStudentByID);
@@ -24,6 +24,7 @@ var Routes = /** @class */ (function () {
         app.route("/api/tutor/setUnAvailable/:tutorID").put(this.Tutor.setUnAvailable);
         app.route("/api/tutor/setSelected/:tutorID").put(this.Tutor.setSelected);
         app.route("/api/tutor/unSelected/:tutorID").put(this.Tutor.resetSelect);
+        //    app.use('/', express.static(__dirname+'/angularDist'));
     };
     return Routes;
 }());
