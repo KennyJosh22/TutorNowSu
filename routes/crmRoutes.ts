@@ -22,20 +22,20 @@ export class Routes {
         this.User = new userController();
     }
     public routes(app:express.Application) :void {
-    //    app.use('/', express.static(__dirname+'/angularDist'));
+        //    app.use('/', express.static(__dirname+'/angularDist'));
        app.route("/").get ((req:Request, res:Response) =>{
            console.log ('get /');
            res.status(200). send("Connected/ HomePage!");
        })
 
-// Log in SSO
+        // Log in SSO
         app.get("/auth/google", passport.authenticate("google",{
             scope:['https://www.googleapis.com/auth/plus.login', 'email']
         }));
 
         app.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: '/auth/google', session: false }),
         (req:any, res) => {
-                console.log('wooo we authenticated, here is our user id:',req.user.id);
+                console.log('wooo we authenticated, here is our user id and email:',req.user.id, req.user.email);
                 res.redirect(`http://tutornowsu.azurewebsites.net/redirect/${req.user.id}`)
             }
         )
@@ -46,7 +46,7 @@ export class Routes {
        app.route("/api/students/").get(this.Student.getAllStudents);
        app.route("/api/student/:studentID").get(this.Student.getStudentByID);
 
-     //-------------------------- Tutor Route  -----------------------------------------
+        //-------------------------- Tutor Route  -----------------------------------------
 
        app.route("/api/tutor/addNewTuTor").post(this.Tutor.addNewTutor);
        app.route("/api/tutors/").get(this.Tutor.getAllTutors);
@@ -56,6 +56,6 @@ export class Routes {
        app.route("/api/tutor/setUnAvailable/:tutorID").put(this.Tutor.setUnAvailable);
        app.route("/api/tutor/setSelected/:tutorID").put(this.Tutor.setSelected);
        app.route("/api/tutor/unSelected/:tutorID").put(this.Tutor.resetSelect);
-    //    app.use('/', express.static(__dirname+'/angularDist'));
+        //   app.use('/', express.static(__dirname+'/angularDist'));
     }
 }

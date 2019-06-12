@@ -29,7 +29,7 @@ class App{
         // this.app.use(cors());
     }
     private openDBConnection():void{
-    
+
         console.log('trying to connect to Mongo')
         Mongoose.connect(this.mongoUrl, {useNewUrlParser: true})
             .then( () => {

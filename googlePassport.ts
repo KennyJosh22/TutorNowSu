@@ -31,7 +31,8 @@ class GooglePassport {
                     console.log('validating google profile:' + JSON.stringify(profile));
                     // this.userId = profile.id;
                     // this.displayName = profile.displayName;
-                    // this.email = profile.emails[0].value;
+                    this.email = profile.emails[0].value;
+                    console.log('email: ', this.email);
                     console.log("id: ",profile.id)
                     return done(null, profile);
                 })
