@@ -9,13 +9,13 @@ var should = chai.should();
 var http = require('http');
 chai.use(chaiHttp);
 
-describe('Test /api/student/4', function(){
+describe('Test Get Succesfully', function(){
     var requestResult;
     var response;
 
     before (function(done){
-        chai.request("http://localhost:3000")
-            .get("/api/student/4")
+        chai.request("https://tutornowsu.azurewebsites.net")
+            .get("/api/student/106132083938140080000")
             .end(function(err,res){
                 requestResult = res.body;
                 response = res;
@@ -51,12 +51,14 @@ describe('Test /api/student/4', function(){
                 for (var i = 0;i < body.length; i++){
                     expect(body[i]).to.equal('John');
 					expect(body[i]).to.equal('Howey');
-					expect(body[i]).to.equal('hgreethamy@booking.com');
+					expect(body[i]).to.equal('duc.mh.vu@gmail.com');
                     expect(body[i]).to.equal('Computer Science');
-                    expect(body[i]).to.equal('4');
+                    expect(body[i]).to.equal('106132083938140080000');
                 }
                 return true;
             }
         );
     });
 });
+
+
