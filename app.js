@@ -34,6 +34,8 @@ var App = /** @class */ (function () {
         })["catch"](function (err) { return console.error(err); });
     };
     App.prototype.routes = function () {
+        var router = express.Router();
+        this.app.use('/', router);
         this.app.use('/', express.static(__dirname + '/angularDist'));
     };
     return App;

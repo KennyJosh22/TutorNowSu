@@ -40,7 +40,8 @@ class App{
     }
 
     private routes() {
-
+        let router = express.Router();
+        this.app.use('/', router);
         this.app.use('/', express.static(__dirname+'/angularDist'));
     }
 
