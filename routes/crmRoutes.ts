@@ -22,10 +22,11 @@ export class Routes {
         this.User = new userController();
     }
     public routes(app:express.Application) :void {
-    //    app.route("/").get ((req:Request, res:Response) =>{
-    //        console.log ('get /');
-    //        res.status(200). send("Connected/ HomePage!");
-    //    })
+    //    app.use('/', express.static(__dirname+'/angularDist'));
+       app.route("/").get ((req:Request, res:Response) =>{
+           console.log ('get /');
+           res.status(200). send("Connected/ HomePage!");
+       })
 
 // Log in SSO
         app.get("/auth/google", passport.authenticate("google",{

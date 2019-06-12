@@ -13,10 +13,11 @@ var Routes = /** @class */ (function () {
         this.User = new userController_1.userController();
     }
     Routes.prototype.routes = function (app) {
-        //    app.route("/").get ((req:Request, res:Response) =>{
-        //        console.log ('get /');
-        //        res.status(200). send("Connected/ HomePage!");
-        //    })
+        //    app.use('/', express.static(__dirname+'/angularDist'));
+        app.route("/").get(function (req, res) {
+            console.log('get /');
+            res.status(200).send("Connected/ HomePage!");
+        });
         // Log in SSO
         app.get("/auth/google", passport.authenticate("google", {
             scope: ['https://www.googleapis.com/auth/plus.login', 'email']

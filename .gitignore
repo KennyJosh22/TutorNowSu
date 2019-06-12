@@ -51,3 +51,4 @@ dbCommands/
 e2e/
 node_modules/
 docs/
+.vscode/

@@ -12,7 +12,7 @@ const path = require('http')
 import express = require('express');
 const port = process.env.PORT || 8443 ;
 
-app.use('/',express.static(__dirname+'/angularDist'));
+// app.use('/',express.static(__dirname+'/angularDist'));
 // app.use('/*', (req,res) =>{
 //     res.sendFile(path.join(__dirname));
 // })

@@ -17,6 +17,7 @@ var App = /** @class */ (function () {
         this.mongoUrl = 'mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/su_tutor?retryWrites=true&w=majority';
         this.config();
         this.openDBConnection();
+        this.routes();
         this.routePrv.routes(this.app);
     }
     App.prototype.config = function () {
@@ -31,6 +32,9 @@ var App = /** @class */ (function () {
             .then(function () {
             console.log('Connected to MongoDB..');
         })["catch"](function (err) { return console.error(err); });
+    };
+    App.prototype.routes = function () {
+        this.app.use('/', express.static(__dirname + '/angularDist'));
     };
     return App;
 }());

@@ -18,7 +18,8 @@ class App{
     constructor(){   
         this.config();
         this.openDBConnection();
-        this.routePrv.routes(this.app);
+        this.routes();
+        this.routePrv.routes(this.app);     
     }
     private config():void{
         // support application/json type post data
@@ -36,6 +37,11 @@ class App{
 
             })
             .catch( err => console.error(err)) ;
+    }
+
+    private routes() {
+
+        this.app.use('/', express.static(__dirname+'/angularDist'));
     }
 
 
