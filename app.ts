@@ -13,7 +13,7 @@ class App{
     public routePrv: Routes = new Routes();
     // public mongoUrl: string = 'mongodb://localhost/su_tutor';
 
-    public mongoUrl: string = 'mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/tutorNow?retryWrites=true&w=majority';
+    public mongoUrl: string = 'mongodb+srv://DucVu:Comebacktome-2@cluster0-bowjh.azure.mongodb.net/su_tutor?retryWrites=true&w=majority';
  
     constructor(){   
         this.config();
