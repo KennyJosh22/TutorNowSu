@@ -28,6 +28,7 @@ var App = /** @class */ (function () {
         // this.app.use(cors());
     };
     App.prototype.openDBConnection = function () {
+        console.log('trying to connect to Mongo');
         Mongoose.connect(this.mongoUrl, { useNewUrlParser: true })
             .then(function () {
             console.log('Connected to MongoDB..');

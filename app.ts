@@ -30,6 +30,7 @@ class App{
     }
     private openDBConnection():void{
     
+        console.log('trying to connect to Mongo')
         Mongoose.connect(this.mongoUrl, {useNewUrlParser: true})
             .then( () => {
                 console.log('Connected to MongoDB..')
