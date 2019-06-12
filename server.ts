@@ -10,7 +10,7 @@ import app from "./app";
 
 const path = require('http')
 import express = require('express');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8443 ;
 
 app.use('/',express.static(__dirname+'/angularDist'));
 // app.use('/*', (req,res) =>{

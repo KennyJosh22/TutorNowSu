@@ -8,7 +8,7 @@ exports.__esModule = true;
 var app_1 = require("./app");
 var path = require('http');
 var express = require("express");
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8443;
 app_1["default"].use('/', express.static(__dirname + '/angularDist'));
 // app.use('/*', (req,res) =>{
 //     res.sendFile(path.join(__dirname));
