@@ -18,11 +18,11 @@ export class userController {
             else{
                 if (user.isTutor){
                     console.log("redirect to the google page")
-                    res.redirect(`http://localhost:3000/tutor/${req.params.googleID}`)
+                    res.redirect(`http://localhost:3000/#/tutor/${req.params.googleID}`)
                 }
                 else{
                     console.log("redirect to the student page")
-                    res.redirect(`http://localhost:3000/student/${req.params.googleID}`)
+                    res.redirect(`http://localhost:3000/#/student/${req.params.googleID}`)
                 }
             }
         })

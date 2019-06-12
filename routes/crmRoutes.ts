@@ -6,17 +6,20 @@ import {TutorController} from "../controllers/tutorController";
 import {userController} from "../controllers/userController"
 import GooglePassport from "../googlePassport";
 
-
+let passport = require('passport');
 export class Routes {
     public Student: StudentController;
     public Tutor: TutorController;
+    public User: userController;
     public googlePassportObj:GooglePassport;
+
     
 
     constructor(){
         this.googlePassportObj = new GooglePassport();
         this.Student = new StudentController();
         this.Tutor = new TutorController();
+        this.User = new userController();
     }
     public routes(app:express.Application) :void {
     //    app.route("/").get ((req:Request, res:Response) =>{
@@ -25,18 +28,18 @@ export class Routes {
     //    })
 
 // Log in SSO
-    //     app.get("/auth/google", passport.authenticate("google",{
-    //         scope:['https://www.googleapis.com/auth/plus.login', 'email']
-    //     }));
+        app.get("/auth/google", passport.authenticate("google",{
+            scope:['https://www.googleapis.com/auth/plus.login', 'email']
+        }));
 
-    //     app.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: '/auth/google', session: false }),
-    //     (req:any, res) => {
-    //             console.log('wooo we authenticated, here is our user id:',req.user.id);
-    //             res.redirect(`http://localhost:3000/redirect/${req.user.id}`)
-    //         }
-    //     )
+        app.get('/auth/google/callback',passport.authenticate('google', { failureRedirect: '/auth/google', session: false }),
+        (req:any, res) => {
+                console.log('wooo we authenticated, here is our user id:',req.user.id);
+                res.redirect(`http://localhost:3000/redirect/${req.user.id}`)
+            }
+        )
 
-    //    app.route("/redirect/:googleID").get(this.User.redirectUser);
+       app.route("/redirect/:googleID").get(this.User.redirectUser);
 
        app.route("/api/student/addNewStudent").post(this.Student.addNewStudent);
        app.route("/api/students/").get(this.Student.getAllStudents);
