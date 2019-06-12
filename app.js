@@ -7,7 +7,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var crmRoutes_1 = require("./routes/crmRoutes");
 var Mongoose = require("mongoose");
-var cors = require("cors");
+// import cors = require("cors");
 // import cors from "cors";
 var App = /** @class */ (function () {
     function App() {
@@ -24,7 +24,7 @@ var App = /** @class */ (function () {
         this.app.use(bodyParser.json());
         //support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({ extended: false }));
-        this.app.use(cors());
+        // this.app.use(cors());
     };
     App.prototype.openDBConnection = function () {
         Mongoose.connect(this.mongoUrl, { useNewUrlParser: true })

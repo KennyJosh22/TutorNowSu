@@ -6,7 +6,7 @@ import * as bodyParser from "body-parser";
 import { Routes } from "./routes/crmRoutes";
 
 import Mongoose = require("mongoose");
-import cors = require("cors");
+// import cors = require("cors");
 // import cors from "cors";
 class App{
     public app: express.Application = express();
@@ -25,7 +25,7 @@ class App{
         this.app.use(bodyParser.json());
         //support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({ extended: false }));
-        this.app.use(cors());
+        // this.app.use(cors());
     }
     private openDBConnection():void{
     
