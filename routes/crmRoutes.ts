@@ -11,9 +11,7 @@ export class Routes {
     public Student: StudentController;
     public Tutor: TutorController;
     public User: userController;
-    public googlePassportObj:GooglePassport;
-
-    
+    public googlePassportObj:GooglePassport;    
 
     constructor(){
         this.googlePassportObj = new GooglePassport();
